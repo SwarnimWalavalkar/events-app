@@ -1,0 +1,60 @@
+<% include ../partials/header %>
+
+<main role="main">
+    <section class="sec-head jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">All Events</h1>
+            <p class="lead text-light">
+                Find Nearby Events and Meetups about the topics that interests
+                you..
+            </p>
+            <p>
+                <a href="/events/new" id="addEvent" class="btn btn-block"
+                    >Add new Event</a
+                >
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <% events.forEach(function(event){ %>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img
+                            class="card-img-top"
+                            src="<%= event.image %>"
+                            alt="thumbnail"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title"><%=event.name%></h5>
+                            <p
+                                class="card-text .text-truncate"
+                                style="display: inline-block;"
+                            >
+                                <%=event.description%>
+                            </p>
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <a
+                                    class="btn btn-sm btn-outline-secondary"
+                                    href="/events/<%=event._id%>"
+                                    >View</a
+                                >
+
+                                <small class="text-muted"
+                                    ><i class="fas fa-map-marker-alt"></i>
+                                    Mumbai
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+</main>
+<% include ../partials/footer %>

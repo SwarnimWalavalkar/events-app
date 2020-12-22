@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- Make site responsive on mobile/tablet -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Events App</title>
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/">Events App</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+
+                <div class="my-2 my-lg-0">
+                    <ul class="navbar-nav">
+                        <% if(!currentUser){ %>
+                        <li
+                            class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %> nav-item"
+                        >
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li
+                            class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %> nav-item"
+                        >
+                            <a class="nav-link" href="/register">Sign Up</a>
+                        </li>
+                        <% } else { %>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="/users/<%=currentUser.id%>"
+                                >Signed In As <%= currentUser.username %></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <%if(error && error.length > 0){%>
+            <div class="alert alert-danger"><%=error%></div>
+            <%}%> <%if(success && success.length > 0){%>
+            <div class="alert alert-success"><%=success%></div>
+            <%}%>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+.thumbnail img {
+    width: 100%;
+}
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.sec-head {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 106, 0, 1) 35%,
+        rgba(238, 9, 121, 1) 100%
+    );
+    color: white;
+}
+
+#addEvent {
+    color: white;
+    box-shadow: 2px 4px 0px 1px rgba(189, 40, 112, 0.685);
+    background: linear-gradient(
+        90deg,
+        rgba(238, 9, 121, 1) 50%,
+        rgb(238, 40, 136) 100%
+    );
+}

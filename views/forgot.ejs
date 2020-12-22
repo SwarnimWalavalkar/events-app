@@ -1,0 +1,49 @@
+<%include ./partials/header%>
+<style>
+    .loginForm {
+        width: 60%;
+        border: 1px solid #eaeced;
+        padding: 42px 42px 36px;
+        margin: 200px auto;
+        border-radius: 5px;
+    }
+
+    .emailInput {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0 0 0 10px;
+        border-radius: 5px;
+        border: 1px solid #e1e7eb;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .login {
+        background-color: #0070ba;
+        color: #ffffff;
+        width: 100%;
+        border-radius: 5px;
+        height: 44px;
+        font-size: 16px;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+</style>
+<div class="loginForm">
+    <form action="/forogt" method="POST">
+        <h2 style="text-align: center;">Forgot Password</h2>
+        <div>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Associated with account"
+                class="emailInput"
+                required
+            />
+        </div>
+        <button type="submit" class="login">Send Reset Link</button>
+    </form>
+</div>
+<%include ./partials/footer%>

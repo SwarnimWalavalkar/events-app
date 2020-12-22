@@ -1,0 +1,136 @@
+<%include ./partials/header%>
+<style>
+    .loginForm {
+        width: 400px;
+        border: 1px solid #eaeced;
+        padding: 42px 42px 36px;
+        margin: 200px auto;
+        border-radius: 5px;
+    }
+
+    .register.input {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0 0 0 10px;
+        border-radius: 5px;
+        border: 1px solid #e1e7eb;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .signup {
+        background-color: #0070ba;
+        color: #ffffff;
+        width: 100%;
+        border-radius: 5px;
+        height: 44px;
+        font-size: 16px;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .trouble {
+        padding: 20px 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .trouble a {
+        color: #0070ba;
+        text-decoration: none;
+    }
+
+    .login {
+        background-color: #e1e7eb;
+        color: #000000;
+        width: 100%;
+        border-radius: 5px;
+        height: 44px;
+        font-size: 16px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .separator {
+        border: 1px solid #e1e7eb;
+        border-bottom: 0;
+    }
+</style>
+<div class="loginForm">
+    <form class="register" action="/register" method="POST">
+        <h2 style="text-align: center;">Register</h2>
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="username"
+                placeholder="username"
+            />
+        </div>
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="password"
+            />
+        </div>
+
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+            />
+        </div>
+
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+            />
+        </div>
+
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="Email"
+            />
+        </div>
+
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="avatar"
+                placeholder="Avatar"
+            />
+        </div>
+
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="adminCode"
+                placeholder="Admin code"
+            />
+        </div>
+        <button type="submit" class="signup">Sign up</button>
+    </form>
+    <hr class="separator" />
+    <button
+        type="button"
+        onclick="window.location.href = '/login'"
+        class="login"
+    >
+        Login
+    </button>
+</div>
+<%include ./partials/footer%>

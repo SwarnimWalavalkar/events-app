@@ -1,0 +1,20 @@
+body {
+    background: rgb(255, 106, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 106, 0, 1) 35%,
+        rgba(238, 9, 121, 1) 100%
+    );
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}

@@ -1,0 +1,36 @@
+<%include ../partials/header%>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%=user.firstName + " " + user.lastName%></h1>
+        <%if(currentUser && currentUser.isAdmin){%>
+        <h3 style="color: green">Admin</h3>
+        <%}%>
+        <div class="card" style="width: 18rem">
+            <img
+                class="card-img-top"
+                src="<%=user.avatar%>"
+                alt="User Profile Picture"
+            />
+            <div class="caption">
+                <p><a href="mailto:<%=user.email%>"><%=user.email%></a></p>
+                <%if(currentUser && user._id.equals(currentUser._id)){%>
+                <p><a href="/users/<%=user._id%>/edit">Edit Profile</a></p>
+                <p><a href="/forgot">Reset Password</a></p>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3><%=user.username%>'s Events:</h3>
+        <ul>
+            <%events.forEach(event => {%>
+            <li>
+                <a href="/events/<%=event.id%>"><%=event.name%></a>
+            </li>
+            <%});%>
+        </ul>
+    </div>
+</div>
+
+<%include ../partials/footer%>
